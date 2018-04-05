@@ -49,16 +49,24 @@ h3 {
     padding: 20px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    .nav_toggler {
+        display: none;
+        color: $primary-color;
+        font-size: 2em;
+    }
 
     .nav-bar {
         display: flex;
         justify-content: space-between;
         list-style-type: none;
+        padding: 0;
         
         a {
             padding: 10px;
             text-decoration: none;
-            color: #fff;
+            color: $primary-color;
             font-weight: 400;
             border-bottom: 1px solid transparent;
             transition: all 0.3s;
@@ -80,6 +88,33 @@ h3 {
     }
 }
 
+@media screen and (max-width: 815px) {
+    .nav {
+        position: relative;
+
+        .nav_toggler {
+            display: block;
+        }
+        .nav-bar {
+            display: none;
+            position: absolute;
+            top: 78px;
+            right: 0;
+            width: 100%;
+            background: linear-gradient(rgba(76, 61, 114, 0.8), rgba(76, 61, 114, 0.8));
+
+            li {
+                display: block;
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            &.show-nav-bar {
+                display: block;
+            }
+        }
+    }
+}
 
 /*
 * HEADER
@@ -89,7 +124,7 @@ h3 {
     align-items: center;
     justify-content: center;
     height: 670px;
-    background: linear-gradient(rgba(76, 61, 114, 0.7), rgba(76, 61, 114, 0.7)), url(../img/homebg.jpg) no-repeat center / cover fixed;
+    background: linear-gradient(rgba(76, 61, 114, 0.8), rgba(76, 61, 114, 0.8)), url(../img/homebg.jpg) no-repeat center / cover fixed;
 }
 
 .header_content {
