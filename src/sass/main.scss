@@ -2,7 +2,6 @@ $primary-color: #fff;
 $details-color: #00e0d0;
 
 body {
-    margin: 0;
     color: $primary-color;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
@@ -42,45 +41,45 @@ h3 {
     z-index: 100;
     top: 0;
     width: 100%;
+}
 
-    .nav {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px 20px;
+.nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .nav-bar {
         display: flex;
         justify-content: space-between;
+        list-style-type: none;
+        
+        a {
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
 
-        .nav-bar {
-            display: flex;
-            justify-content: space-between;
-
-            list-style-type: none;
-            
-            a {
-                padding: 10px;
-                text-decoration: none;
-                color: #fff;
-                font-weight: 400;
-                border-bottom: 1px solid transparent;
-                transition: all 0.3s;
-
-                &:hover {
-                    color: $details-color;
-                }
-
-                &:active {
-                    color: $details-color;
-                    border-bottom: 1px solid $details-color;
-                }
+            &:hover {
+                color: $details-color;
             }
 
-            li .active {
+            &:active {
                 color: $details-color;
                 border-bottom: 1px solid $details-color;
             }
         }
+
+        li .active {
+            color: $details-color;
+            border-bottom: 1px solid $details-color;
+        }
     }
 }
+
 
 /*
 * HEADER
@@ -96,6 +95,7 @@ h3 {
 .header_content {
     text-align: center;
     margin: 0 20px;
+    
     p {
         max-width: 700px;
         margin-bottom: 40px;

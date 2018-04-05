@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -34,31 +33,32 @@ h3 {
   z-index: 100;
   top: 0;
   width: 100%; }
-  #nav-fixed .nav {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 20px;
+
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between; }
+  .nav .nav-bar {
     display: flex;
-    justify-content: space-between; }
-    #nav-fixed .nav .nav-bar {
-      display: flex;
-      justify-content: space-between;
-      list-style-type: none; }
-      #nav-fixed .nav .nav-bar a {
-        padding: 10px;
-        text-decoration: none;
-        color: #fff;
-        font-weight: 400;
-        border-bottom: 1px solid transparent;
-        transition: all 0.3s; }
-        #nav-fixed .nav .nav-bar a:hover {
-          color: #00e0d0; }
-        #nav-fixed .nav .nav-bar a:active {
-          color: #00e0d0;
-          border-bottom: 1px solid #00e0d0; }
-      #nav-fixed .nav .nav-bar li .active {
+    justify-content: space-between;
+    list-style-type: none; }
+    .nav .nav-bar a {
+      padding: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s; }
+      .nav .nav-bar a:hover {
+        color: #00e0d0; }
+      .nav .nav-bar a:active {
         color: #00e0d0;
         border-bottom: 1px solid #00e0d0; }
+    .nav .nav-bar li .active {
+      color: #00e0d0;
+      border-bottom: 1px solid #00e0d0; }
 
 /*
 * HEADER
