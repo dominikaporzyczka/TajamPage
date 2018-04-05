@@ -1,8 +1,10 @@
-// Add class 'active' to active nav item
-const addActiveClassToNavElement = (function () {
-    const navBarItem = document.querySelectorAll('.nav-bar li a');
-    const navBar = document.querySelector('.nav-bar');
+(function() {
+    const navBarTop = document.getElementById('nav-fixed'),
+        navBar = document.querySelector('.nav-bar'),
+        navBarItem = document.querySelectorAll('.nav-bar li a'),
+        navToggleIcon = document.querySelector('.nav_toggler');
         
+    // Add class 'active' to active nav item
     for (let i = 0; i < navBarItem.length; i++) {
         navBarItem[i].addEventListener('click', function () {
             document.querySelector('.nav-bar .active').classList.remove('active');
@@ -10,12 +12,15 @@ const addActiveClassToNavElement = (function () {
             navBar.classList.remove('show-nav-bar');
         });
     }
-})();
 
-// Change color of nav's background during scrolling
-const navScroll = (function () {
-    const navBarTop = document.getElementById('nav-fixed');
+    // Show nav bar after click toggler button
+    navToggleIcon.addEventListener('click', function(e) {
+        navBar.classList.toggle('show-nav-bar');
 
+        e.preventDefault();
+    });
+
+    // Change color of nav's background during scrolling
     window.addEventListener('scroll', function () {
         console.log(document.body.scrollTop);
         const top = window.pageYOffset || document.documentElement.scrollTop;
@@ -25,16 +30,5 @@ const navScroll = (function () {
         else {
             navBarTop.style.background = 'transparent';
         }
-    });
-})();
-
-const toggleNav = (function() {
-    const navToggleIcon = document.querySelector('.nav_toggler');
-
-    navToggleIcon.addEventListener('click', function(e) {
-        const navBar = document.querySelector('.nav-bar');
-        navBar.classList.toggle('show-nav-bar');
-
-        e.preventDefault();
     });
 })();
