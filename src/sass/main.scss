@@ -2,6 +2,7 @@ $primary-color: #fff;
 $details-color: #00e0d0;
 
 body {
+    margin: 0;
     color: $primary-color;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
@@ -39,6 +40,7 @@ h3 {
 #nav-fixed {
     position: fixed;
     z-index: 100;
+    top: 0;
     width: 100%;
 
     .nav {

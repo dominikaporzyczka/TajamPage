@@ -43,6 +43,7 @@ gulp.task('watch-files', function() {
     });
     gulp.watch('src/index.html').on('change', browserSync.reload);
     gulp.watch('src/css/**/*').on('change', browserSync.reload);
+    gulp.watch('src/js/**/*').on('change', browserSync.reload);
 
     gulp.watch('src/sass/**/*.scss', ['sass-to-css']);
     gulp.watch('src/index.html', ['copy-html']);
