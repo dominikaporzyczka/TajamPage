@@ -17,7 +17,7 @@ gulp.task('copy-html', function() {
 });
 
 gulp.task('copy-styles', function() {
-    gulp.src('src/css/**/*')
+    gulp.src(['src/css/**/*', 'src/vendors/**/*.css'])
         .pipe(gulp.dest('dist/css'))
 });
 
@@ -33,7 +33,7 @@ gulp.task('sass-to-css', function() {
 });
 
 gulp.task('copy-js', function() {
-    gulp.src('src/js/**/*')
+    gulp.src(['src/js/**/*', 'src/vendors/**/*.js'])
         .pipe(gulp.dest('dist/js'));
 });
 

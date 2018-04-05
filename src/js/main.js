@@ -1,4 +1,4 @@
-// add class 'active' to active nav item
+// Add class 'active' to active nav item
 const addActiveClassToNavElement = (function () {
     const navBarItem = document.querySelectorAll('.nav-bar li a');
 
@@ -13,7 +13,7 @@ const addActiveClassToNavElement = (function () {
 // Change color of nav's background during scrolling
 const navScroll = (function () {
     const navBarTop = document.getElementById('nav-fixed');
-    
+
     window.addEventListener('scroll', function () {
         console.log(document.body.scrollTop);
         const top = window.pageYOffset || document.documentElement.scrollTop;
