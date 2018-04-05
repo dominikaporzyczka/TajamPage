@@ -51,4 +51,4 @@ gulp.task('watch-files', function() {
     gulp.watch('src/js/**/*', ['copy-js']);
 });
 
-gulp.task('default', ['copy-html', 'copy-styles', 'copy-js', 'watch-files']);
+gulp.task('default', ['copy-html', 'copy-styles', 'copy-img', 'copy-js', 'watch-files']);
