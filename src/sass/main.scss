@@ -1,7 +1,8 @@
+$primary-color: #fff;
 $details-color: #00e0d0;
 
 body {
-    color: #fff;
+    color: $primary-color;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 16px;
@@ -27,8 +28,55 @@ h3 {
     transition: all 0.3s;
 
     &:hover {
-        background-color: #00e0d0;
-        color: #fff;
+        background-color: $details-color;
+        color: $primary-color;
+    }
+}
+
+/*
+* NAVIGATION
+*/
+#nav-fixed {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+
+    .nav {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+
+            list-style-type: none;
+            
+            a {
+                padding: 10px;
+                text-decoration: none;
+                color: #fff;
+                font-weight: 400;
+                border-bottom: 1px solid transparent;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: $details-color;
+                }
+
+                &:active {
+                    color: $details-color;
+                    border-bottom: 1px solid $details-color;
+                }
+            }
+
+            li .active {
+                color: $details-color;
+                border-bottom: 1px solid $details-color;
+            }
+        }
     }
 }
 
