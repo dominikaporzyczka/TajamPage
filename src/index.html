@@ -19,16 +19,18 @@
     <section id="nav-fixed">
         <nav class="nav">
             <a href="#" class="nav_logo">
-                <img src="img/logo.png">
+                <img src="img/logo.png" alt="Tajam Logo">
             </a>
 
-            <a href="" class="nav_toggler"><i class="fas fa-bars"></i></a>
+            <a href="" class="nav_toggler">
+                <i class="fas fa-bars"></i>
+            </a>
             <ul class="nav-bar animated fadeInDown">
                 <li>
                     <a class="nav-bar_active" href="#header">HOME</a>
                 </li>
                 <li>
-                    <a href="#">ABOUT</a>
+                    <a href="#about">ABOUT</a>
                 </li>
                 <li>
                     <a href="#">EXPERTISE</a>
@@ -48,8 +50,9 @@
             </ul>
         </nav>
     </section>
+
     <header id="header">
-        <section class="header_content">
+        <section class="header_content column">
             <h2>We Are Awesome Creative Agency</h2>
             <div class="header_separator"></div>
             <p>
@@ -57,9 +60,36 @@
                 ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi
                 accumsan ipsum velit.
             </p>
-            <a href="#" class="btn">LEARN MORE</a>
+            <a href="#about" class="btn">LEARN MORE</a>
         </section>
     </header>
+
+    <article id="about">
+        <div class="column">
+            <section class="about_story">
+                <img class="about_story__arrow animated fadeInLeft" src="img/ableft.png">
+                <section class="about_story__content animated fadeInRight">
+                    <h3>OUR STORY</h3>
+                    <p>
+                        Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                        ipsum. Nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                        Morbi accumsan ipsum velit.
+                    </p>
+                    <p>
+                        Nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                        Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                    </p>
+                    <a href="#expertise" class="btn">LEARN MORE</a>
+                </section>
+            </section>
+        </div>
+        <section class="about_watch">
+            <div class="about_watch__play-icon">
+                <i class="far fa-play-circle"></i>
+            </div>
+            <p>WATCH OUR STORY</p>
+        </section>
+    </article>
 
     <script src="js/fontawesome-all.min.js"></script>
     <script src="js/main.js"></script>

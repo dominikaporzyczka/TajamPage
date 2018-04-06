@@ -16,6 +16,14 @@ h3 {
     font-weight: 900;
 }
 
+p {
+    line-height: 25px;
+}
+
+.column {
+    margin: 0 20px;
+}
+
 /* BUTTONS */
 .btn {
     padding: 10px 20px;
@@ -130,7 +138,6 @@ h3 {
 
 .header_content {
     text-align: center;
-    margin: 0 20px;
     
     p {
         max-width: 700px;
@@ -143,4 +150,72 @@ h3 {
         margin: 20px auto;
         background: $details-color;
     }
+}
+
+/*
+* ABOUT
+*/
+#about {
+    color: #444;
+}
+
+.about_story {
+    display: flex;
+    max-width: 900px;
+    margin: 60px auto;
+
+    .about_story__arrow {
+        margin: 0 60px;
+    }
+
+    .about_story__content {
+
+        & p:nth-of-type(2) {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.about_watch {
+    color: $primary-color;
+    height: 450px;
+    background: linear-gradient(rgba(76, 61, 114, 0.8), rgba(76, 61, 114, 0.8)), url(../img/videobg.jpg) no-repeat center / cover fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .about_watch__play-icon {
+        font-size: 5em;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            color: $details-color;
+        }
+    }
+
+    p {
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+}
+
+@media screen and (max-width: 815px) {
+    .about_story {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 500px;
+
+        .about_story__arrow {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 60px;
+        }
+
+        .about_story__content {
+            text-align: center;
+        }    
+    }
+
 }
