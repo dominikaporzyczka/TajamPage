@@ -3,6 +3,7 @@
         navBar = document.querySelector('.nav-bar'),
         navBarItem = document.querySelectorAll('.nav-bar li a'),
         navToggleIcon = document.querySelector('.nav_toggler');
+        teamMembers = document.querySelectorAll('.team-member');
 
     // Add class 'active' to active nav item
     for (let i = 0; i < navBarItem.length; i++) {
@@ -30,4 +31,16 @@
             navBarTop.style.background = 'transparent';
         }
     });
+
+    for (let i = 0; i < teamMembers.length; i++) {
+        const img = teamMembers[i].querySelector('img');
+
+        teamMembers[i].addEventListener('mouseenter', function() { 
+            img.classList.add('flipInY');
+        });
+
+        teamMembers[i].addEventListener('mouseleave', function() {
+            img.classList.remove('flipInY');
+        });
+    }
 })();

@@ -1,12 +1,21 @@
 $primary-color: #fff;
 $details-color: #00e0d0;
 $additional-color: #444;
+$break-point-md: 850px;
+$break-point-s: 500px;
 
 body {
     color: $primary-color;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 16px;
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
 }
 
 h1,
@@ -26,7 +35,8 @@ p {
 }
 
 .row {
-    margin: 60px auto;
+    margin: 0 auto;
+    padding: 60px 0;
     max-width: 900px;
 }
 
@@ -109,7 +119,7 @@ p {
     }
 }
 
-@media screen and (max-width: 815px) {
+@media screen and (max-width: $break-point-md) {
     .nav {
         position: relative;
 
@@ -209,7 +219,7 @@ p {
     }
 }
 
-@media screen and (max-width: 815px) {
+@media screen and (max-width: $break-point-md) {
     .about_story {
         flex-wrap: wrap;
         justify-content: center;
@@ -243,7 +253,7 @@ p {
 
     .feature {
         flex-basis: 30%;
-        margin: 20px 0;
+        margin-top: 20px;
 
         .offer_icon {
             font-size: 3em;
@@ -257,7 +267,7 @@ p {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: $break-point-md) {
     .offer {
         .feature {
             flex-basis: 45%;
@@ -265,10 +275,85 @@ p {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: $break-point-s) {
     .offer {
         .feature {
             flex-basis: 80%;
         }
+    }
+}
+
+/*
+* TEAM
+*/
+#team {
+    overflow: auto;
+    text-align: center;
+    background: linear-gradient(rgba(76, 61, 114, 0.8), rgba(76, 61, 114, 0.8)), url(../img/homebg.jpg) no-repeat center / cover fixed;
+}
+
+.team_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .team_content__separator {
+        background-color: $primary-color;
+    }
+}
+
+.team_content__team-members {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-member {
+    flex-basis: 20%;
+    margin-bottom: 40px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }  
+}
+
+.team-member_introduction {
+    border: 1px solid $primary-color;
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+
+    p {
+        margin: 0;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+    }
+
+    p:first-of-type {
+        font-weight: 800;
+    }
+}
+
+.team_content__hire {
+    margin-top: 40px;
+
+    p {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: $break-point-md) {
+    .team-member {
+        flex-basis: 40%; 
+    }
+}
+
+@media screen and (max-width: $break-point-s) {
+    .team-member {
+        flex-basis: 80%; 
     }
 }
