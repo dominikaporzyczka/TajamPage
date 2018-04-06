@@ -1,5 +1,6 @@
 $primary-color: #fff;
 $details-color: #00e0d0;
+$additional-color: #444;
 
 body {
     color: $primary-color;
@@ -22,6 +23,18 @@ p {
 
 .column {
     margin: 0 20px;
+}
+
+.row {
+    margin: 60px auto;
+    max-width: 900px;
+}
+
+.separator {
+    height: 1px;
+    width: 50px;
+    margin: 20px auto;
+    background: $additional-color;
 }
 
 /* BUTTONS */
@@ -145,9 +158,6 @@ p {
     }
 
     .header_separator {
-        height: 1px;
-        width: 50px;
-        margin: 20px auto;
         background: $details-color;
     }
 }
@@ -156,13 +166,11 @@ p {
 * ABOUT
 */
 #about {
-    color: #444;
+    color: $additional-color;
 }
 
 .about_story {
     display: flex;
-    max-width: 900px;
-    margin: 60px auto;
 
     .about_story__arrow {
         margin: 0 60px;
@@ -218,4 +226,49 @@ p {
         }    
     }
 
+}
+
+/*
+* EXPERTISE
+*/
+#expertise {
+    color: $additional-color;
+    text-align: center;
+}
+
+.offer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .feature {
+        flex-basis: 30%;
+        margin: 20px 0;
+
+        .offer_icon {
+            font-size: 3em;
+            color: $details-color;
+        }
+
+        h3 {
+            font-size: 1em;
+            margin: 30px 0 20px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .offer {
+        .feature {
+            flex-basis: 45%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .offer {
+        .feature {
+            flex-basis: 80%;
+        }
+    }
 }
