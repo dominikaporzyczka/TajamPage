@@ -357,3 +357,60 @@ p {
         flex-basis: 80%; 
     }
 }
+
+/*
+* OUR WORKS
+*/
+
+#works {
+    color: $additional-color;
+}
+
+.works_top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        color: $additional-color;
+    }
+}
+
+.works_images {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        box-sizing: border-box;
+        flex-basis: 16.66667%;
+        height: auto;
+        
+        img {
+            float: left;
+            width: 100%;
+        }
+    }
+}
+
+.works_btn {
+    text-align: center;
+    margin: 60px 20px;
+}
+
+@media screen and (max-width: $break-point-md) {
+    .works_images {
+        a {
+            flex-basis: 33.3333333%;
+        }
+    }
+}
+
+@media screen and (max-width: $break-point-s) {
+    .works_images {
+        a {
+            flex-basis: 50%;
+        }
+    }
+}
