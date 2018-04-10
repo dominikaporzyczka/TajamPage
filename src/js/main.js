@@ -4,7 +4,9 @@
         navBarItem = document.querySelectorAll('.nav-bar li a'),
         navToggleIcon = document.querySelector('.nav_toggler');
         teamMembers = document.querySelectorAll('.team-member');
-
+        peoplesPhotos = document.querySelectorAll('.peoplesay_content__imgs img');
+        peoplesOpinions = document.querySelectorAll('.peoplesay_content__opinion');
+    
     // Add class 'active' to active nav item
     for (let i = 0; i < navBarItem.length; i++) {
         navBarItem[i].addEventListener('click', function () {
@@ -32,6 +34,7 @@
         }
     });
 
+    // Add animations to team members photos
     for (let i = 0; i < teamMembers.length; i++) {
         const img = teamMembers[i].querySelector('img');
 
@@ -43,4 +46,22 @@
             img.classList.remove('flipInY');
         });
     }
+
+    // Change content for each person opinion
+    for (let i = 0; i < peoplesPhotos.length; i++) {
+        const animation = 'fadeInRight';
+
+        peoplesPhotos[i].addEventListener('click', function() {
+            for (let j = 0; j < peoplesPhotos.length; j++) {
+                peoplesPhotos[j].classList.remove('active');
+                peoplesOpinions[j].classList.remove(animation);
+                peoplesOpinions[j].classList.remove('active');
+            }
+
+            this.classList.add('active');
+            peoplesOpinions[i].classList.add(animation);
+            peoplesOpinions[i].classList.add('active');
+        });
+    }
+    
 })();
