@@ -6,10 +6,12 @@ $break-point-s: 500px;
 
 body {
     color: $primary-color;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
     box-sizing: border-box;
+    font : {
+        family: "Roboto", sans-serif;
+        weight: 300;
+        size: 16px;
+    }
 }
 
 *,
@@ -36,9 +38,9 @@ p {
 }
 
 .row {
+    max-width: 900px;
     margin: 0 auto;
     padding: 60px 0;
-    max-width: 900px;
 }
 
 .separator {
@@ -51,13 +53,15 @@ p {
 /* BUTTONS */
 .btn {
     padding: 10px 20px;
-    font-size: 20px;
-    font-weight: 400;
     letter-spacing: 1px;
     text-decoration: none;
     color: $details-color;
     border: 1px solid $details-color;
     transition: all 0.3s;
+    font : {
+        size: 20px;
+        weight: 400;
+    }
 
     &:hover {
         background-color: $details-color;
@@ -82,38 +86,34 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-    .nav_toggler {
-        display: none;
+.nav_toggler {
+    display: none;
+    color: $primary-color;
+    font-size: 2em;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    
+    a {
+        padding: 10px;
+        text-decoration: none;
         color: $primary-color;
-        font-size: 2em;
-    }
+        font-weight: 400;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s;
 
-    .nav-bar {
-        display: flex;
-        justify-content: space-between;
-        list-style-type: none;
-        padding: 0;
-        
-        a {
-            padding: 10px;
-            text-decoration: none;
-            color: $primary-color;
-            font-weight: 400;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s;
-
-            &:hover {
-                color: $details-color;
-            }
-
-            &:active {
-                color: $details-color;
-                border-bottom: 1px solid $details-color;
-            }
+        &:hover {
+            color: $details-color;
         }
 
-        li .nav-bar_active {
+        &:active,
+        &.nav-bar_active {
             color: $details-color;
             border-bottom: 1px solid $details-color;
         }
@@ -123,28 +123,28 @@ p {
 @media screen and (max-width: $break-point-md) {
     .nav {
         position: relative;
+    }
 
-        .nav_toggler {
+    .nav_toggler {
+        display: block;
+    }
+
+    .nav-bar {
+        display: none;
+        position: absolute;
+        top: 78px;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(rgba(76, 61, 114, 0.8), rgba(76, 61, 114, 0.8));
+
+        li {
             display: block;
+            margin: 20px 0;
+            text-align: center;
         }
-        
-        .nav-bar {
-            display: none;
-            position: absolute;
-            top: 78px;
-            right: 0;
-            width: 100%;
-            background: linear-gradient(rgba(76, 61, 114, 0.8), rgba(76, 61, 114, 0.8));
 
-            li {
-                display: block;
-                margin: 20px 0;
-                text-align: center;
-            }
-
-            &.show-nav-bar {
-                display: block;
-            }
+        &.show-nav-bar {
+            display: block;
         }
     }
 }
@@ -167,10 +167,10 @@ p {
         max-width: 700px;
         margin-bottom: 40px;
     }
+}
 
-    .header_separator {
-        background: $details-color;
-    }
+.header_separator {
+    background: $details-color;
 }
 
 /*
@@ -182,16 +182,16 @@ p {
 
 .about_story {
     display: flex;
+}
 
-    .about_story__arrow {
-        margin: 0 60px;
-    }
+.about_story__arrow {
+    margin: 0 60px;
+}
 
-    .about_story__content {
+.about_story__content {
 
-        & p:nth-of-type(2) {
-            margin-bottom: 40px;
-        }
+    & p:nth-of-type(2) {
+        margin-bottom: 40px;
     }
 }
 
@@ -204,19 +204,19 @@ p {
     justify-content: center;
     align-items: center;
 
-    .about_watch__play-icon {
-        font-size: 5em;
-        cursor: pointer;
-        transition: all 0.3s;
-
-        &:hover {
-            color: $details-color;
-        }
-    }
-
     p {
         font-weight: 700;
         letter-spacing: 1px;
+    }
+}
+
+.about_watch__play-icon {
+    font-size: 5em;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        color: $details-color;
     }
 }
 
@@ -224,19 +224,18 @@ p {
     .about_story {
         flex-wrap: wrap;
         justify-content: center;
-        max-width: 500px;
-
-        .about_story__arrow {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 60px;
-        }
-
-        .about_story__content {
-            text-align: center;
-        }    
+        max-width: 500px;  
     }
 
+    .about_story__arrow {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 60px;
+    }
+
+    .about_story__content {
+        text-align: center;
+    }
 }
 
 /*
@@ -251,36 +250,33 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
 
-    .feature {
-        flex-basis: 30%;
-        margin-top: 20px;
+.offer_feature {
+    flex-basis: 30%;
+    margin-top: 20px;
 
-        .offer_icon {
-            font-size: 3em;
-            color: $details-color;
-        }
-
-        h3 {
-            font-size: 1em;
-            margin: 30px 0 20px 0;
-        }
+    h3 {
+        font-size: 1em;
+        margin: 30px 0 20px 0;
     }
+}
+
+.offer_feature__icon {
+    font-size: 3em;
+    color: $details-color;
 }
 
 @media screen and (max-width: $break-point-md) {
-    .offer {
-        .feature {
-            flex-basis: 45%;
-        }
+    .offer_feature {
+        flex-basis: 45%;
     }
+    
 }
 
 @media screen and (max-width: $break-point-s) {
-    .offer {
-        .feature {
-            flex-basis: 80%;
-        }
+    .offer_feature {
+        flex-basis: 80%;
     }
 }
 
@@ -298,10 +294,10 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    .team_content__separator {
-        background-color: $primary-color;
-    }
+}
+
+.team_content__separator {
+    background-color: $primary-color;
 }
 
 .team_content__team-members {
@@ -362,7 +358,6 @@ p {
 /*
 * OUR WORKS
 */
-
 #works {
     color: $additional-color;
 }
@@ -533,6 +528,7 @@ p {
     .footer {
         justify-content: space-around;
     }
+    
     .footer_main {
         flex-basis: 80%;
         margin-bottom: 30px;
