@@ -27,6 +27,7 @@ h4 {
     margin: 0;
     font-family: "Merriweather", serif;
     font-weight: 900;
+    text-transform: uppercase;
 }
 
 p {
@@ -456,6 +457,91 @@ p {
         &.active {
             width: 60px;
             height: 60px;
+        }
+    }
+} 
+
+/*
+* CONTACT
+*/
+#contact {
+    color: $additional-color;
+}
+
+.contact_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    button {
+        background: transparent;
+    }
+}
+
+.contact_content__section {
+    flex-basis: 40%;
+
+    h2 {
+        margin-bottom: 40px;
+    }
+}
+
+.contact-form {
+    input,
+    textarea{
+        width: 100%;
+        padding: 10px 5px;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+}
+
+.clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    img {
+        margin-bottom: 40px;
+        width: 150px;
+        height: auto;
+
+        &:nth-child(2n+1) {
+            margin-right: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: $break-point-md) {
+    .contact_content__section {
+        flex-basis: 70%;
+    }
+
+    .contact_content__section {
+        &:nth-child(1) {
+            margin-bottom: 60px;
+        }
+    }
+
+    .clients {
+        justify-content: space-around;
+
+        img {
+            &:nth-child(n+1) {
+                margin: {
+                    left: 20px;
+                    right: 20px;
+                }
+            }
         }
     }
 }
