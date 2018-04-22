@@ -6,6 +6,7 @@
         teamMembers = document.querySelectorAll('.team-member'),
         peoplesPhotos = document.querySelectorAll('.peoplesay_content__imgs img'),
         peoplesOpinions = document.querySelectorAll('.peoplesay_content__opinion');
+        buttons = document.querySelectorAll('.btn');
 
     /**
      * @description Gets coordinates of element
@@ -22,8 +23,8 @@
     /**
      * @description Scrolls to specific position
      * @param {Element} element - reference element
-     * @param {*} to - scroll position
-     * @param {*} duration - duration of animation
+     * @param {Number} to - scroll position
+     * @param {Number} duration - duration of animation
      */
     function scrollTo(element, to, duration) {
         if (duration <= 0) return;
@@ -37,6 +38,19 @@
         }, 10);
     }
 
+    /**
+     * @description Calls scrollTo function
+     * @param {Element} el - HTML element
+     */
+    function callScrollTo(el) {
+        const attribute = el.getAttribute('href'),
+        element = document.querySelector(attribute),
+        offset = getOffset(element);
+    
+        // call scrollTo function
+        scrollTo(document.documentElement, offset.top - 93, 500);
+    }
+
     // Add class 'active' to active nav item
     for (let i = 0; i < navBarItem.length; i++) {
         navBarItem[i].addEventListener('click', function (e) {
@@ -44,11 +58,16 @@
             this.classList.add('nav-bar_active');
             navBar.classList.remove('show-nav-bar');
 
-            const attribute = this.getAttribute('href'),
-                element = document.querySelector(attribute),
-                offset = getOffset(element);
-                        
-            scrollTo(document.documentElement, offset.top - 93, 500);
+            // call scrollTo function
+            callScrollTo(this);
+
+            e.preventDefault();
+        });
+    }
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function (e) {
+            callScrollTo(this);
 
             e.preventDefault();
         });
