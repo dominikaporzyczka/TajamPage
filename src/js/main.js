@@ -8,9 +8,12 @@
         peoplesOpinions = document.querySelectorAll('.peoplesay_content__opinion');
         buttons = document.querySelectorAll('.btn');
 
+    const idSet = ['header', 'about', 'expertise', 'team', 'works', 'peoplesay', 'contact'];
+
     /**
      * @description Gets coordinates of element
      * @param {Element} el - HTML element
+     * @returns object with element position
      */
     function getOffset(el) {
         el = el.getBoundingClientRect();
@@ -47,18 +50,50 @@
         element = document.querySelector(attribute),
         offset = getOffset(element);
     
-        // call scrollTo function
+        // Call scrollTo function
         scrollTo(document.documentElement, offset.top - 93, 500);
     }
 
-    // Add class 'active' to active nav item
+    /**
+     * @description Checks if element is visible
+     * @param {Element} el - HTML element
+     * @returns true or false (true if element is visible, false otherwise )
+     */
+    function isScrolledIntoView(el) {
+        var rect = el.getBoundingClientRect();
+        var elemTop = rect.top;
+        var elemBottom = rect.bottom;
+
+        // Partially visible elements return true:
+        var isVisible = elemTop < 94 && (elemBottom - 90) >= 0;
+        return isVisible;
+    }
+
+    window.addEventListener('scroll', function() {
+        for (let i = 0; i < idSet.length; i++) {
+            const element = document.getElementById(idSet[i]);
+            const isVisible = isScrolledIntoView(element);
+
+            if (isVisible) {
+                const aElem = 'a[href="#' + idSet[i] + '"]';
+                const navItem = document.querySelector(aElem);
+                const activeElem = document.querySelector('.nav-bar .nav-bar_active');
+
+                if (activeElem !== null) {
+                    activeElem.classList.remove('nav-bar_active');
+                }
+
+                navItem.classList.add('nav-bar_active');
+            }
+        }
+    });
+
+    // Remove class 'show-nav-bar' after select item
     for (let i = 0; i < navBarItem.length; i++) {
         navBarItem[i].addEventListener('click', function (e) {
-            document.querySelector('.nav-bar .nav-bar_active').classList.remove('nav-bar_active');
-            this.classList.add('nav-bar_active');
             navBar.classList.remove('show-nav-bar');
 
-            // call scrollTo function
+            // Call scrollTo function
             callScrollTo(this);
 
             e.preventDefault();
