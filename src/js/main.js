@@ -47,9 +47,9 @@
      */
     function callScrollTo(el) {
         const attribute = el.getAttribute('href'),
-        element = document.querySelector(attribute),
-        offset = getOffset(element);
-    
+            element = document.querySelector(attribute),
+            offset = getOffset(element);
+
         // Call scrollTo function
         scrollTo(document.documentElement, offset.top - 93, 500);
     }
@@ -69,7 +69,8 @@
         return isVisible;
     }
 
-    window.addEventListener('scroll', function() {
+    // Add class active to visible element
+    window.addEventListener('scroll', function () {
         for (let i = 0; i < idSet.length; i++) {
             const element = document.getElementById(idSet[i]);
             const isVisible = isScrolledIntoView(element);
